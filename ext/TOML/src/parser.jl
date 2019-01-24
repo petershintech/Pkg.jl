@@ -76,7 +76,7 @@ function linecol(p::Parser, offset::Int)
     seekstart(p.input)
     line = 0
     cur = 1
-    for (i,l) in enumerate(eachline(p.input, chomp=false))
+    for (i,l) in enumerate(eachline(p.input, keep=true))
         if cur + length(l) > offset
             return (i, offset - cur + 1)
         end

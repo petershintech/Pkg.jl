@@ -1,0 +1,12 @@
+name = "TOML"
+desc = "The TOML parser for Julia's package manager"
+uuid = "7ab3959e-fc62-457a-88b7-ddb939818b44"  # this is fake
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

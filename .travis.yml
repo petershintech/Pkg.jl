@@ -44,6 +44,13 @@ jobs:
         - julia --project -e 'using Pkg; Pkg.activate("docs"); Pkg.instantiate(); Pkg.develop(PackageSpec(path = pwd()))'
         - julia --project=docs --color=yes docs/make.jl
       after_success: skip
+  include:
+    - name: TOML
+      stage: test
+      os: linux
+      script:
+        - julia -e 'using Pkg; Pkg.develop(PackageSpec(path="ext/TOML")); Pkg.instantiate(); Pkg.test("TOML")'
+      after_success: skip
 
 after_success:
   - julia --project -e 'import Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'

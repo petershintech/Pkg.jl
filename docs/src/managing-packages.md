@@ -146,7 +146,7 @@ The `dev` command fetches a full clone of the package to `~/.julia/dev/` (the pa
 When importing `Example` julia will now import it from `~/.julia/dev/Example` and whatever local changes have been made to the files in that path are consequently
 reflected in the code loaded. When we used `add` we said that we tracked the package repository, we here say that we track the path itself.
 Note that the package manager will never touch any of the files at a tracked path. It is therefore up to you to pull updates, change branches etc.
-If we try to `dev` a package at some branch that already exists at `~/.julia/dev/` the package manager we will simply use the existing path.
+If we try to `dev` a package at some branch that already exists at `~/.julia/dev/` the package manager will use the existing path.
 For example:
 
 ```
